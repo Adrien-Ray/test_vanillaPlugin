@@ -1,0 +1,23 @@
+{
+    "description": "test_vanillaPlugin desc",
+    "manifest_version": 2,
+    "name": "test_vanillaPlugin",
+    "version": "0.1",
+    "homepage_url": "https://github.com/Adrien-Ray/test_vanillaPlugin",
+    "icons": {
+        "48": "logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "index.js"
+            ],
+            "css": [
+                "styles.css"
+            ]
+        }
+    ]
+}
