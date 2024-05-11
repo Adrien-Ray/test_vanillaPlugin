@@ -1,5 +1,6 @@
-// document.getElementById('search').placeholder = "ceci est un troll";
+let count = 0;
 
-// document.body.innerHTML = '';
-
-document.body.style.border = "5px solid red";
+setInterval(() => {
+    count++;
+    console.log('ceci est un test '+count);
+}, 1000);
