@@ -1,3 +1,5 @@
 .env
 data_db/
 data_nextcloud/
+selfsigned.crt
+selfsigned.key

@@ -20,10 +20,6 @@ services:
   app:
     image: nextcloud
     restart: always
-    ports:
-      - 8080:80
-    links:
-      - db
     volumes:
       - ./data_nextcloud:/var/www/html
     environment:
@@ -31,3 +27,14 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 443:443
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./selfsigned.crt:/etc/nginx/certs/selfsigned.crt
+      - ./selfsigned.key:/etc/nginx/certs/selfsigned.key
+    depends_on:
+      - app
